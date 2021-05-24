@@ -12,11 +12,11 @@ saveDFLoc = 'DataFrames\\'
 
 def getLinks(Files=None):
     if Files:
-        new = list(fld.askopenfilenames())
+        new = list(fld.askopenfilenames(initialdir=os.getcwd(), title="Select Spectrums"))
         for newfile in new:
             Files.append(newfile)
     else:
-        Files = list(fld.askopenfilenames())
+        Files = list(fld.askopenfilenames(initialdir=os.getcwd(), title="Select Spectrums"))
 
     return Files
 
