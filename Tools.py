@@ -12,11 +12,19 @@ saveDFLoc = 'DataFrames\\'
 
 def getLinks(Files=None):
     if Files:
-        new = list(fld.askopenfilenames(initialdir=os.getcwd(), title="Select Spectrums"))
+        new = list(fld.askopenfilenames())
         for newfile in new:
+            index = newfile.index('Data')
+            newfile = newfile[index::]
             Files.append(newfile)
     else:
-        Files = list(fld.askopenfilenames(initialdir=os.getcwd(), title="Select Spectrums"))
+        Files = []
+        new = list(fld.askopenfilenames())
+        for newfile in new:
+            index = newfile.index('Data')
+            newfile = newfile[index::]
+            Files.append(newfile)
+
 
     return Files
 
@@ -90,12 +98,17 @@ def plot(Data, Columns, title='Title', fig=1, cushion=0.05, Loc=savefig, legMax 
     plt.xticks(fontname=font, fontsize=ticks)
     plt.yticks(fontname=font, fontsize=ticks)
 
-    if len(Columns) > legMax:
-        Columns = []
+    if len(Columns) < legMax:
+        font = {'size': 10}
+        mpl.rc('font', **font)
+        if type(Columns) is not list:
+            temp = []
+            temp.append(Columns)
+            Columns = temp
 
-    font = {'size': 10}
-    mpl.rc('font', **font)
-    leg = plt.legend(Columns, prop={'family': 'Arial'})
+        leg = plt.legend(Columns, prop={'family': 'Arial'})
+
+
 
     plt.savefig(fname=Loc + title + '.png')
 
