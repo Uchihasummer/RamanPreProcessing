@@ -94,7 +94,7 @@ def plot(Data, Columns, title='Title', fig=1, legendEntries = None, cushion=0.05
 
     font, small, large, ticks, legend = ['Arial', 14, 16, 8, 12]
     plt.title(title, fontname=font, fontsize=small)
-    plt.xlabel('Frequency', fontname=font, fontsize=small)
+    plt.xlabel('Wavelength (nm)', fontname=font, fontsize=small)
     plt.ylabel('Counts', fontname=font, fontsize=small)
     plt.xticks(fontname=font, fontsize=ticks)
     plt.yticks(fontname=font, fontsize=ticks)
