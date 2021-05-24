@@ -10,6 +10,6 @@ links = ['Data/5-21-21/Vial 1.SSM', 'Data/5-21-21/Vial 2.SSM', 'Data/5-21-21/Via
 Spectrums, Labels = getData(links)
 
 Spectrums = averagePiecewise(Spectrums, Labels)
-plot(Spectrums, Labels, 'All Maltol', 1)
+plot(Spectrums, Labels, 'Raman Vial Spectrums', 1)
 
-plot(Spectrums, Spectrums.columns[20], 'Average Spectrums', 2)
+plot(Spectrums, Spectrums.columns[20], 'Average Raman Vial Spectrum', 2)
