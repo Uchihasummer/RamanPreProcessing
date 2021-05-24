@@ -65,3 +65,6 @@ from Tools import *
 # Maltol = subtractPiecewise(Maltol,Maltol.columns, 'Maltol - Vial')
 #
 # plot(Maltol, Maltol.columns, title = 'Vial Spectrum Subtracted from Maltol', fig = 4)
+
+
+links = getLinks()
