@@ -91,7 +91,7 @@ def plot(Data, Columns, title='Title', fig=1, cushion=0.05, Loc=savefig, legMax 
     plt.yticks(fontname=font, fontsize=ticks)
 
     if len(Columns) > legMax:
-        Columns = ['']
+        Columns = []
 
     font = {'size': 10}
     mpl.rc('font', **font)
