@@ -12,4 +12,4 @@ Spectrums, Labels = getData(links)
 Spectrums = averagePiecewise(Spectrums, Labels)
 plot(Spectrums, Labels, 'Raman Vial Spectrums', 1)
 
-plot(Spectrums, Spectrums.columns[20], 'Average Raman Vial Spectrum', 2)
+plot(Spectrums, Spectrums.columns[20], 'Average Raman Vial Spectrum', fig = 2, legendEntries='Average')

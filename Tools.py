@@ -72,7 +72,8 @@ def subtractPiecewise(Data, Columns, Col_Name='Subtract'):
     return Data
 
 
-def plot(Data, Columns, title='Title', fig=1, cushion=0.05, Loc=savefig, legMax = 10):
+def plot(Data, Columns, title='Title', fig=1, legendEntries = None, cushion=0.05, Loc=savefig, legMax = 10):
+    print('Generating Plot for Figure: ', fig)
     plt.figure(fig, figsize=[12.8, 4.8], dpi=100, tight_layout=True, frameon=False)
     plt.plot(Data.index, Data[Columns], linewidth=0.5)
 
@@ -98,15 +99,19 @@ def plot(Data, Columns, title='Title', fig=1, cushion=0.05, Loc=savefig, legMax 
     plt.xticks(fontname=font, fontsize=ticks)
     plt.yticks(fontname=font, fontsize=ticks)
 
-    if len(Columns) < legMax:
-        font = {'size': 10}
-        mpl.rc('font', **font)
-        if type(Columns) is not list:
-            temp = []
-            temp.append(Columns)
-            Columns = temp
+    if legendEntries != None:
+        print('Legend Entries Found')
+        if len(legendEntries) < legMax:
+            print('Legend Entries Under Max')
+            font = {'size': 10}
+            mpl.rc('font', **font)
+            if type(legendEntries) is not list:
+                print('Legend Entry is not List!')
+                temp = []
+                temp.append(legendEntries)
+                legendEntries = temp
 
-        leg = plt.legend(Columns, prop={'family': 'Arial'})
+            leg = plt.legend(legendEntries, prop={'family': 'Arial'})
 
 
 
