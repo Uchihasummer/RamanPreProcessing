@@ -5,8 +5,9 @@ import pandas as pd
 from tkinter import filedialog as fld
 import os
 
-savefig = 'C:\\Users\\nstheobald.FORTLEWIS.008\\Desktop\\Raman_Spec\\Data\\GeneratePlots\\'
-saveDFLoc = 'C:\\Users\\nstheobald.FORTLEWIS.008\\Desktop\\Raman_Spec\\Data\\SavedDF\\'
+
+savefig = 'Figures\\'
+saveDFLoc = 'DataFrames\\'
 
 
 def getLinks(Files=None):
